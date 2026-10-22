@@ -1,5 +1,5 @@
 /**
- * Host half of @local/dsh-combo.
+ * Host half of dsh-combo.
  *
  * The HUD is entirely browser-side: it reads the composer's draft projection and
  * the Chat tool-result nodes directly, so no Host service, projection, or session

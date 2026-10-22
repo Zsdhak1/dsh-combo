@@ -1,5 +1,5 @@
 /**
- * @local/dsh-combo — browser half.
+ * dsh-combo — browser half.
  *
  * A Devil May Cry style combo HUD drawn in the empty gutters beside the
  * conversation column. Two halves, split by capability:
@@ -31,7 +31,10 @@
  */
 
 window.__ModuleLoader__.load({
-  id: '@local/dsh-combo',
+  // Must match the package name in package.json exactly. The loader looks the
+  // module up by package name, so a stale id here means the module registers
+  // under a name nothing asks for and the plugin silently never appears.
+  id: 'dsh-combo',
   factory(require) {
     const React = require('react');
     const h = React.createElement;
@@ -41,7 +44,7 @@ window.__ModuleLoader__.load({
      * page refresh can be confirmed by eye: if the badge still shows the old
      * stamp, the browser is serving the previous module generation.
      */
-    const BUILD = '2026-10-22 15:38:09';
+    const BUILD = '2026-10-22 16:24:04';
 
     /** Route the Host half serves the resolved tuning document on. */
     const CONFIG_PATH = '/plugins/dsh-combo/config.json';
