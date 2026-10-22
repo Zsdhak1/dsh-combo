@@ -1,0 +1,43 @@
+{
+  "name": "dsh-combo",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Devil May Cry style combo HUD for the DSH Web UI: your typing charges the combo, the Agent's tool calls land the hits.",
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "dsh-plugin",
+    "plugin",
+    "ui",
+    "combo",
+    "dmc",
+    "devil-may-cry",
+    "hud",
+    "rank",
+    "game-feel"
+  ],
+  "license": "MIT",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": ["@deepseek-ai/dsh-client-ui-conversation"]
+    }
+  }
+}

@@ -1,0 +1,35 @@
+# dsh-combo — bundle patch.
+#
+# Inserts the plugin row. Everything below `config` is optional: omit a field and
+# the built-in default stands. Editing these values is the intended way to retune
+# the HUD without reinstalling it.
+- insert:
+    - id: combo
+      name: 'dsh-combo'
+      config:
+        # Default effect intensity until the user moves the slider (0-100).
+        intensity: 70
+
+        # Extra rank names appended ABOVE V. Leave empty to keep the built-in
+        # ladder (D C B A S SS SSS SSS+ V). Names must be unique.
+        extraRanks: []
+
+        # Typing lane. `ladder` is how many characters are needed to reach each
+        # rank above D; the list must be strictly increasing.
+        you:
+          ladder: [7, 16, 29, 47, 70, 101, 150, 230]
+          # Silence before the meter starts draining, in ms.
+          idleMs: 3000
+          # Combo points lost per second once draining.
+          decayPerSec: 5
+
+        # Tool-call lane. `ladder` counts settled tool calls per rank above D.
+        agent:
+          ladder: [2, 4, 7, 11, 16, 22, 30, 42]
+          idleMs: 25000
+
+        # Phrase banks. Leave a list empty to keep the built-in lines.
+        # A non-empty list REPLACES the built-in one for that lane.
+        phrases:
+          you: []
+          agent: []

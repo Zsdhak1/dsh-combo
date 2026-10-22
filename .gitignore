@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+pnpm-lock.yaml
+
+# Harness profile artifacts that must never be committed
+.obsidian/
+*.log
+
+# Editor / OS noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local scratch
+*.local
+*.tmp
